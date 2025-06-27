@@ -13,7 +13,12 @@ body{
 }
 
 .navbar-brand, .navbar-brand:focus, .navbar-brand:active, .navbar-brand:hover{
-    color: white;
+    color: rgb(255, 255, 255);
+}
+
+.offcanvas{
+    background-color: rgb(255, 255, 255);
+    opacity: 60%;
 }
 
 .menu{
