@@ -42,3 +42,7 @@ button.btn-close:focus, button.btn-close:active{
     background-color: white;
     color: black;
 }
+
+button.menu[aria-expanded="true"] {
+  display: none !important;
+}
