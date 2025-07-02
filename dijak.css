@@ -1,0 +1,39 @@
+.stat .number{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.stat .label{
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.row{
+    padding: 1.5rem;
+}
+
+.col{
+    margin: 0.5rem;
+}
+
+.card-text{
+    display: flex;
+    gap: 1rem;
+}
+
+.count{
+    padding-left: 50%;
+}
+
+.card-img-top{
+    height: 30rem;
+    object-fit: cover;
+
+    
+}
+
+.numstat{
+    margin-bottom: 5rem;
+}
+
