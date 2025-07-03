@@ -9,22 +9,35 @@
     margin-bottom: 2rem;
 }
 
-.row{
-    padding: 1.5rem;
+.col-12.col-md-4, .col-12.col-lg-6{
+    padding: 1rem;
+    margin-bottom: 1rem;
+
 }
 
-.col{
-    margin: 0.5rem;
+.stat{
+    background-color: rgb(236, 236, 236);
+    padding: 1rem;
+    border-radius: 2rem;
 }
 
 .card-text{
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
 }
 
 .count{
-    padding-left: 50%;
+    font-size: larger;
+    margin-right: 0;
 }
+
+.years{
+    color: #818181;
+    font-size: small;
+}
+
+
 
 .card-img-top{
     height: 30rem;
@@ -34,6 +47,6 @@
 }
 
 .numstat{
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
