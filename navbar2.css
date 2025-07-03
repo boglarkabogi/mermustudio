@@ -25,10 +25,6 @@ button.btn-close:focus, button.btn-close:active{
     box-shadow: none;
 }
 
-#offcanvasNavbar{
-    
-}
-
 .offcanvas-header{
     margin: 1rem;
 }

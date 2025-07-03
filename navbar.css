@@ -21,6 +21,11 @@ body{
     opacity: 60%;
 }
 
+.menu-offcanvas-wrapper:has(.offcanvas.show) .menu {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .menu{
     border: none;
     background-color: transparent;
@@ -43,6 +48,3 @@ button.btn-close:focus, button.btn-close:active{
     color: black;
 }
 
-button.menu[aria-expanded="true"] {
-  display: none !important;
-}

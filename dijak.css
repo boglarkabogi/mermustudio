@@ -16,9 +16,11 @@
 }
 
 .stat{
-    background-color: rgb(236, 236, 236);
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
+    border: solid rgb(191, 191, 191) 1px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .card-text{

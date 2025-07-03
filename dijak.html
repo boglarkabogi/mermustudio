@@ -159,7 +159,7 @@
                   <div class="card-text">
                     <div class="txt">
                       <h6>Év Háza</h6>
-                      <div class="years">1995 1996 1997 1998 2019 2020 2025</div>
+                      <div class="years">1995 | 1996 | 1997 | 1998 | 2019 | 2020 | 2025</div>
                     </div>
                     <div class="count"><h1>7</h1></div>
                   </div>
@@ -190,7 +190,7 @@
                   <div class="card-text">
                     <div class="txt">
                       <h6>Veszprém megye év háza</h6>
-                      <div class="years">1999 2000 2002 2003 2004</div>
+                      <div class="years">1999 | 2000 | 2002 | 2003 | 2004</div>
                     </div>
                     <div class="count"><h1>5</h1></div>
                   </div>
@@ -221,7 +221,7 @@
                   <div class="card-text">
                     <div class="txt">
                       <h6>Creaton díj</h6>
-                      <div class="years">2019 2021</div>
+                      <div class="years">2019 | 2021</div>
                     </div>
                     <div class="count"><h1>2</h1></div>
                   </div>
@@ -233,15 +233,7 @@
       </div> <!-- container -->
     </div>
 
-    <script>
-      const card = document.querySelector('.card');
-      const yearstxt = card.querySelector('.years');
-      const yearsArray = yearstxt.split(' ');
-      const countDiv = card.querySelector('.count');
-      countDiv.textContent = `${yearsArray.length}`;
-
-    </script>
-
+    <script src="counter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
