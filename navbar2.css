@@ -80,3 +80,8 @@ table.table a:visited {
 #send:active, #del:active{
     background-color: rgb(213, 213, 213);
 }
+
+#id
+{
+    text-decoration: none !important;
+}
