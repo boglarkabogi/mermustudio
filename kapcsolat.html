@@ -53,26 +53,26 @@
     </header>
 
     <main class="container" id="main-content">
-      <form action="mailto:tothbogi55@gmail.com" method="post" enctype="text/plain">
-        <div class="mb-3">
-          <label for="vezeteknev" class="form-label">Vezetéknév</label>
-          <input type="text" class="form-control" id="vezeteknev" name="vezeteknev" maxlength="50" required>
-        </div>
-        <div class="mb-3">
-          <label for="keresztnev" class="form-label">Keresztnév</label>
-          <input type="text" class="form-control" id="keresztnev" name="keresztnev" maxlength="50" required>
-        </div>
+      <form id="contactForm">
         <div class="mb-3">
           <label for="email" class="form-label">E-mail cím</label>
           <input type="email" class="form-control" id="email" name="email" maxlength="100" required>
+        </div>
+        <div class="mb-3">
+          <label for="nev" class="form-label">Teljes név</label>
+          <input type="text" class="form-control" id="nev" name="nev" maxlength="50" required>
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Tárgy</label>
+          <input type="subject" class="form-control" id="targy" name="targy" maxlength="100" required>
         </div>
         <div class="mb-3">
           <label for="uzenet" class="form-label">Üzenet</label>
           <textarea class="form-control" id="uzenet" name="uzenet" rows="5" maxlength="1000" placeholder="Írja meg nekünk kérdését, észrevételét!" required></textarea>
         </div>
         <div class="d-flex gap-2">
-          <button type="reset" class="btn btn-danger">Töröl</button>
-          <button type="submit" class="btn btn-primary">Elküld</button>
+          <button type="reset" id="del">Töröl</button>
+          <button type="submit" id="send">Elküld</button>
         </div>
       </form>
     </main>
@@ -96,7 +96,20 @@
   </div>
 </footer>
 
+    <script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
+    const targy = document.getElementById('targy').value;
+    const email = document.getElementById('email').value;
+    const uzenet = document.getElementById('uzenet').value;
+
+    const subject = encodeURIComponent(`${targy}`);
+    const body = encodeURIComponent(`${uzenet}`);
+
+    window.location.href = `mailto:tothbogi55@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

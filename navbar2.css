@@ -64,3 +64,19 @@ table.table a {
 table.table a:visited {
     color: gray;
 }
+
+#del, #send{
+    background-color: rgb(255, 255, 255);
+    border: rgb(226, 226, 226) solid 1px;
+    color: rgb(31, 31, 31);
+    padding: 12px;
+    border-radius: 3px;
+}
+
+#send:hover, #del:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+#send:active, #del:active{
+    background-color: rgb(213, 213, 213);
+}
