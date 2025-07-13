@@ -83,5 +83,6 @@ table.table a:visited {
 
 #tel
 {
+    text-decoration: underline;
     color: white !important;
 }
