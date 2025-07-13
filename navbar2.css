@@ -84,4 +84,5 @@ table.table a:visited {
 #tel
 {
     text-decoration: none !important;
+    color: white !important;
 }
