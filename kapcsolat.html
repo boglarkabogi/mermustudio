@@ -3,98 +3,74 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Mérmű Studio - Kapcsolat</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mérmű Studio - Szűcs Endre Alapítvány</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="navbar2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="print.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
 
-  </head>
+</head>
   <body>
-    <a href="#main-content" class="skip-link">Ugrás a tartalomra</a>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><strong>MÉRMŰ STUDIO</strong></a>
-          <button class="menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <img src="Képek/black-menu.png" alt="">
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
-                <li class="nav-item"><a class="nav-link" href="arspoetica.html">Ars Poetica</a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Munkáink</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="balatonfured.html">Balatonfüred - lakóépület</a></li>
-                    <li><a class="dropdown-item" href="cs_schieszl.html">Csopak - szőlőhegyi présház</a></li>
-                    <li><a class="dropdown-item" href="cs_cseresnyes.html">Csopak - kúria</a></li>
-                    <li><a class="dropdown-item" href="dorgicse.html">Dörgicse - kúria</a></li>                    
-                    <li><a class="dropdown-item" href="knp.html">Kiskunsági Nemzeti Park - tanösvény</a></li>                    
-                    <li><a class="dropdown-item" href="kispiac.html">Kispest - Wekerle Piac</a></li>
-                    <li><a class="dropdown-item" href="bvtpl.html">Budapest - Belvárosi Templom</a></li>                    
-                  </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="dijak.html">Díjak</a></li>
-                <li class="nav-item"><a class="nav-link" href="szucs.html">Szűcs Endre Alapítvány</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="kapcsolat.html">Kapcsolat</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header id="navbar"></header>
+    <script>
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar").innerHTML = html;
+          document.querySelector(".navbar").classList.add("navbar-light");
 
-    <main class="container" id="main-content">
+          initLanguage();
+        });
+    </script>
+
+    <main class="maincontent" class="container-fluid">
       <form id="contactForm">
         <div class="mb-3">
-          <label for="email" class="form-label">E-mail cím</label>
+          <label for="email" class="form-label" data-i18n="contact_email">E-mail cím</label>
           <input type="email" class="form-control" id="email" name="email" maxlength="100" required>
         </div>
         <div class="mb-3">
-          <label for="nev" class="form-label">Teljes név</label>
+          <label for="nev" class="form-label" data-i18n="contact_name">Teljes név</label>
           <input type="text" class="form-control" id="nev" name="nev" maxlength="50" required>
         </div>
         <div class="mb-3">
-          <label for="subject" class="form-label">Tárgy</label>
-          <input type="subject" class="form-control" id="targy" name="targy" maxlength="100" required>
+          <label for="targy" class="form-label" data-i18n="contact_subject">Tárgy</label>
+          <input type="text" class="form-control" id="targy" name="targy" maxlength="100" required>
         </div>
         <div class="mb-3">
-          <label for="uzenet" class="form-label">Üzenet</label>
-          <textarea class="form-control" id="uzenet" name="uzenet" rows="5" maxlength="1000" placeholder="Írja meg nekünk kérdését, észrevételét!" required></textarea>
+          <label for="uzenet" class="form-label" data-i18n="contact_message">Üzenet</label>
+          <textarea class="form-control" id="uzenet" name="uzenet" rows="5" maxlength="1000"></textarea>
         </div>
         <div class="d-flex gap-2">
-          <button type="reset" id="del">Töröl</button>
-          <button type="submit" id="send">Elküld</button>
+          <button type="reset" id="del" data-i18n="contact_reset">Töröl</button>
+          <button type="submit" id="send" data-i18n="contact_send">Elküld</button>
         </div>
       </form>
     </main>   
+
     <!-- Footer -->
-<footer class="bg-dark text-light py-4 mt-5">
-  <div class="container text-center">
-    <p class="mb-1">Elérhetőségek: <a href="mailto:mermu@mermustudio.hu" class="text-light">mermu@mermustudio.hu</a> | Tel: <a href="tel:+36303871775" id="tel">+36 30 387 1775</a></p>
-    <div class="mb-2">
-      <a href="https://www.facebook.com/mermustudio/?locale=hu_HU" target="_blank" class="text-light me-3 text-decoration-none">
-        <i class="fab fa-facebook fa-lg"></i>
-      </a>
-      <a href="https://www.instagram.com/mermustudio" target="_blank" class="text-light me-3 text-decoration-none">
-        <i class="fab fa-instagram fa-lg"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/peter-toth-ab868036/" target="_blank" class="text-light text-decoration-none">
-        <i class="fab fa-linkedin fa-lg"></i>
-      </a>
-    </div>
-    <p class="mb-0">&copy; 2025 Mérmű Studio – Minden jog fenntartva.</p>
-    <p>Fotók: Mérmű Studio, <a href="https://www.jurassza.com/" target="_blank" class="text-light">Jurassza Zsófia</a></p>
-  </div>
-</footer>
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-1" data-i18n="footer_contacts">
+          Elérhetőségek: <a href="mailto:mermu@mermustudio.hu" class="text-light">mermu@mermustudio.hu</a> | Tel: <a href="tel:+36303871775" id="tel">+36 30 387 1775</a>
+        </p>
+        <div class="mb-2">
+          <a href="https://www.facebook.com/mermustudio/?locale=hu_HU" target="_blank" class="text-light me-3 text-decoration-none">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/mermustudio" target="_blank" class="text-light me-3 text-decoration-none">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/peter-toth-ab868036/" target="_blank" class="text-light text-decoration-none">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+        <p class="mb-0" data-i18n="footer_copyright">&copy; 2025 Mérmű Studio – Minden jog fenntartva.</p>
+        <p data-i18n="footer_photos">Fotók: Mérmű Studio, <a href="https://www.jurassza.com/" target="_blank" class="text-light">Jurassza Zsófia</a></p>
+      </div>
+    </footer>
 
     <script>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -110,6 +86,8 @@
     window.location.href = `mailto:mermu@mermustudio.hu?subject=${subject}&body=${body}`;
   });
 </script>
+
+    <script src="lang.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -12,18 +13,8 @@ body{
     background-color: transparent !important;
 }
 
-.navbar-brand, .navbar-brand:focus, .navbar-brand:active, .navbar-brand:hover{
-    color: rgb(255, 255, 255);
-}
-
-.offcanvas{
-    background-color: rgb(255, 255, 255);
-    opacity: 60%;
-}
-
-.menu-offcanvas-wrapper:has(.offcanvas.show) .menu {
-  opacity: 0;
-  pointer-events: none;
+.navbar-brand{
+    font-weight: bolder;
 }
 
 .menu{
@@ -35,16 +26,106 @@ body{
     height: 1.5rem;
 }
 
-button.btn-close:focus, button.btn-close:active{
-    box-shadow: none;
+button.btn-close{
+  padding: 0.5rem 0 0 0.7;
 }
 
-.offcanvas-header{
-    margin: 1rem;
+button.btn-close:focus, button.btn-close:active {
+  box-shadow: none;
+}
+.offcanvas-header {
+  margin: 1rem;
 }
 
-.dropdown-menu .dropdown-item:active{
-    background-color: white;
+.dropdown-menu .dropdown-item:active {
+  background-color: white;
+  color: black;
+}
+
+#lang-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.navbar-light #lang-toggle {
+  color: black;
+}
+
+.navbar-dark #lang-toggle {
+  color: rgb(255, 255, 255);
+}
+
+/* LIGHT változat */
+.navbar.navbar-light .navbar-brand {
+  color: black;
+}
+.navbar.navbar-light .menu-icon {
+  content: url("Képek/black-menu.png");
+}
+.navbar.navbar-light .offcanvas {
+  background-color: white;
+  opacity: 1;
+}
+
+/* DARK változat */
+.navbar.navbar-dark .navbar-brand {
+  color: white;
+}
+.navbar.navbar-dark .menu-icon {
+  content: url("Képek/white-menu.png");
+}
+.navbar.navbar-dark .offcanvas {
+  background-color: white;
+}
+
+.navbar.navbar-dark .offcanvas *{
     color: black;
 }
 
+/*form*/
+
+form {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+#del, #send{
+    background-color: rgb(255, 255, 255);
+    border: rgb(226, 226, 226) solid 1px;
+    color: rgb(31, 31, 31);
+    padding: 12px;
+    border-radius: 3px;
+}
+
+#send:hover, #del:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+#send:active, #del:active{
+    background-color: rgb(213, 213, 213);
+}
+
+#tel
+{
+    text-decoration: underline;
+    color: white;
+}
+
+/*Background*/
+
+.bg-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-image: url('Képek/dijak/04_szigliget.png');
+    background-size: cover;
+    background-position: 61%;
+    filter: brightness(60%);
+    z-index: -1;  
+}

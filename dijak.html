@@ -8,230 +8,213 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="navbar2.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="dijak.css">
-    <link rel="stylesheet" href="print.css" media="print">
   </head>
   <body>
-     <a href="#maincontent" class="skip-link">Tartalomra ugrás</a>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><strong>MÉRMŰ STUDIO</strong></a>
-          <button class="menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <img src="Képek/black-menu.png" alt="">
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
-                <li class="nav-item"><a class="nav-link" href="arspoetica.html">Ars Poetica</a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Munkáink</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="balatonfured.html">Balatonfüred - lakóépület</a></li>
-                    <li><a class="dropdown-item" href="cs_schieszl.html">Csopak - szőlőhegyi présház</a></li>
-                    <li><a class="dropdown-item" href="cs_cseresnyes.html">Csopak - kúria</a></li>
-                    <li><a class="dropdown-item" href="dorgicse.html">Dörgicse - kúria</a></li>                    
-                    <li><a class="dropdown-item" href="knp.html">Kiskunsági Nemzeti Park - tanösvény</a></li>                    
-                    <li><a class="dropdown-item" href="kispiac.html">Kispest - Wekerle Piac</a></li>
-                    <li><a class="dropdown-item" href="bvtpl.html">Budapest - Belvárosi Templom</a></li>                    
-                  </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="dijak.html">Díjak</a></li>
-                <li class="nav-item"><a class="nav-link" href="szucs.html">Szűcs Endre Alapítvány</a></li>
-                <li class="nav-item"><a class="nav-link" href="kapcsolat.html">Kapcsolat</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header id="navbar"></header>
+    <script>
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar").innerHTML = html;
+          document.querySelector(".navbar").classList.add("navbar-light");
+
+          initLanguage();
+          highlightActive();
+        });
+    </script>
 
     <div id="maincontent" class="container my-4">
       <div class="container-fluid">
-        <div class="numstat">
+         <div class="numstat">
           <div class="row">
             <div class="col-12 col-md-4">
               <div class="stat">
                 <div class="number">40</div>
-                <div class="label">év szakmai tapasztalat</div>
+                <div class="label" data-i18n="stat_exp">év szakmai tapasztalat</div>
               </div>
             </div>
             <div class="col-12 col-md-4">
               <div class="stat">
                 <div class="number">300</div>
-                <div class="label">megépült épület (cca.)</div>
+                <div class="label" data-i18n="stat_built">megépült épület (cca.)</div>
               </div>
             </div>
             <div class="col-12 col-md-4">
               <div class="stat">
                 <div class="number">25</div>
-                <div class="label">nemzetközi és hazai építészeti díj</div>
+                <div class="label" data-i18n="stat_awards">nemzetközi és hazai építészeti díj</div>
               </div>
             </div>
-          </div> <!-- row -->
-      </div> <!-- numstat -->
-        <div class="row">
+          </div>
+        </div>
+
+ <div class="row">
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/dijak/02_festetics.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Europa Nostra-díj</h6>
-                      <div class="years">2013</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_europa">Europa Nostra-díj</h6>
+                    <div class="years">2013</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
+              </div>
+            </div>
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/BVTPL/IMG_6557.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>ÉVOSZ Építőipari nívódíj</h6>
-                      <div class="years">2022</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_evosz">ÉVOSZ Építőipari nívódíj</h6>
+                    <div class="years">2022</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
-          </div> 
+              </div>
+            </div>
+          </div>
         </div> <!-- row -->
 
         <div class="row">
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/dijak/06_festetics.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>ICOMOS-díj</h6>
-                      <div class="years">2013</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_icomos">ICOMOS-díj</h6>
+                    <div class="years">2013</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
+              </div>
+            </div>
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/Wekpiac/IMG_9675.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>OSSKÁR-díj</h6>
-                      <div class="years">2022</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_osskar">OSSKÁR-díj</h6>
+                    <div class="years">2022</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
-          </div> 
+              </div>
+            </div>
+          </div>
         </div> <!-- row -->
 
         <div class="row">
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/dijak/03_festetics.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Pro Arhitectura díj</h6>
-                      <div class="years">2013</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_proarh">Pro Arhitectura díj</h6>
+                    <div class="years">2013</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
+              </div>
+            </div>
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/Csopak-Cseresnyes/IMG_5951.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Év Háza</h6>
-                      <div class="years">1995 | 1996 | 1997 | 1998 | 2019 | 2020 | 2025</div>
-                    </div>
-                    <div class="count"><h1>7</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_ev_haza">Év Háza</h6>
+                    <div class="years">1995 | 1996 | 1997 | 1998 | 2019 | 2020 | 2025</div>
                   </div>
+                  <div class="count"><h1>7</h1></div>
                 </div>
-            </div> <!-- card -->
-          </div> 
+              </div>
+            </div>
+          </div>
         </div> <!-- row -->
 
         <div class="row">
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/Csopak-Schieszl/schieszl_03.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Balaton Év Háza</h6>
-                      <div class="years">2018</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_balaton">Balaton Év Háza</h6>
+                    <div class="years">2018</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
+              </div>
+            </div>
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/dijak/04_szigliget.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Veszprém megye év háza</h6>
-                      <div class="years">1999 | 2000 | 2002 | 2003 | 2004</div>
-                    </div>
-                    <div class="count"><h1>5</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_veszprem">Veszprém megye év háza</h6>
+                    <div class="years">1999 | 2000 | 2002 | 2003 | 2004</div>
                   </div>
+                  <div class="count"><h1>5</h1></div>
                 </div>
-            </div> <!-- card -->
-          </div> 
+              </div>
+            </div>
+          </div>
         </div> <!-- row -->
 
         <div class="row">
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/dijak/05_kecskemet.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Bács-Kiskun megye építészeti díja</h6>
-                      <div class="years">2022</div>
-                    </div>
-                    <div class="count"><h1>1</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_bk">Bács-Kiskun megye építészeti díja</h6>
+                    <div class="years">2022</div>
                   </div>
+                  <div class="count"><h1>1</h1></div>
                 </div>
-            </div> <!-- card -->
+              </div>
+            </div>
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card">
               <img src="Képek/Wekpiac/IMG_9660.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <div class="card-text">
-                    <div class="txt">
-                      <h6>Creaton díj</h6>
-                      <div class="years">2019 | 2021</div>
-                    </div>
-                    <div class="count"><h1>2</h1></div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="txt">
+                    <h6 data-i18n="award_creaton">Creaton díj</h6>
+                    <div class="years">2019 | 2021</div>
                   </div>
+                  <div class="count"><h1>2</h1></div>
                 </div>
-            </div> <!-- card -->
-          </div> 
+              </div>
+            </div>
+          </div>
         </div> <!-- row -->
+
           
       </div> <!-- container -->
     </div>
+
+        <script src="lang.js"></script>
 
     <script src="counter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>

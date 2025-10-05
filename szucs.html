@@ -8,90 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="navbar2.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="arspoetica.css">
-    <link rel="stylesheet" href="print.css" media="print">
 
 </head>
   <body>
-   
-    <a href="#main-content" class="skip-link">Ugrás a tartalomra</a>
-    <header>
-      <nav class="navbar bg-body-tertiary ">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><strong>MÉRMŰ STUDIO</strong></a>
-            <button class="menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-              <img src="Képek/black-menu.png" alt="">
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Kezdőlap</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="arspoetica.html">Ars Poetica</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Munkáink
-                    </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="balatonfured.html">Balatonfüred - lakóépület</a></li>
-                    <li><a class="dropdown-item" href="cs_schieszl.html">Csopak - szőlőhegyi présház</a></li>
-                    <li><a class="dropdown-item" href="cs_cseresnyes.html">Csopak - kúria</a></li>
-                    <li><a class="dropdown-item" href="dorgicse.html">Dörgicse - kúria</a></li>                    
-                    <li><a class="dropdown-item" href="knp.html">Kiskunsági Nemzeti Park - tanösvény</a></li>                    
-                    <li><a class="dropdown-item" href="kispiac.html">Kispest - Wekerle Piac</a></li>
-                    <li><a class="dropdown-item" href="bvtpl.html">Budapest - Belvárosi Templom</a></li>                    
-                  </ul>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="dijak.html">Díjak</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="szucs.html">Szűcs Endre Alapítvány</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-    </header>
+    <header id="navbar"></header>
+    <script>
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar").innerHTML = html;
+          document.querySelector(".navbar").classList.add("navbar-light");
 
-      <div class="container-fluid" id="main-content">
-        <div class="r1 row">
-            <div class="txt col-12 col-lg-6">
-                <h1><strong>Szűcs Endre Alapítvány</strong></h1>
-                <h6>PREAMBULUM</h6>
-                  <p>
-                    Szűcs Endre életművének egyik alapvető pontja, hogy a helyi adottságok és hagyományok szerint célszerű az épített környezethez viszonyulni. Az épített örökség ismerete nélkül nem szabad formálni a jövőt, mert csak az idő próbáját kiállt eredmények használatával tartható fenn a folytonosság. A változó kihívásokra az állandóságból merített fogódzók adnak hatékony választ. Identitásunk megőrzésében ez a legjobb út. Szűcs Endre munkássága ezt a szellemiséget képviselte, párbeszédet teremtve az építészet és a társművészetek között.
-                  </p>
-              </div>
-            <div class="img-col col-12 col-lg-6 ord">
+          initLanguage();
+        });
+    </script>
 
-                <img src="Képek/szucsendre/bandi.png" alt="" class="img-fluid">
+    <main id="maincontent" class="container-fluid">
+      <article>
+      <div class="r1 row">
+        <div class="txt col-12 col-lg-6">
+          <h1><strong data-i18n="szucs_title">Szűcs Endre Alapítvány</strong></h1>
+          <h6>PREAMBULUM</h6>
+          <p data-i18n="szucs_text_1">
+            Szűcs Endre életművének egyik alapvető pontja, hogy a helyi adottságok és hagyományok szerint célszerű az épített környezethez viszonyulni. Az épített örökség ismerete nélkül nem szabad formálni a jövőt, mert csak az idő próbáját kiállt eredmények használatával tartható fenn a folytonosság. A változó kihívásokra az állandóságból merített fogódzók adnak hatékony választ. Identitásunk megőrzésében ez a legjobb út. Szűcs Endre munkássága ezt a szellemiséget képviselte, párbeszédet teremtve az építészet és a társművészetek között.
+          </p>
+        </div>
+        <div class="img-col col-12 col-lg-6 ord">
+          <img src="Képek/szucsendre/bandi.png" alt="" class="img-fluid">
+        </div>
+      </div> <!-- row -->
 
-            </div>
-        </div> <!-- row -->
-        <div class="row">
-            <div class="img-col col-12 col-lg-6 order-2 order-lg-1">
-                <img src="Képek/szucsendre/bandi2.png" alt="" class="img-fluid">
-            </div>
-            <div class="col-12 col-lg-6 order-1 order-lg-2">
-              <p>
-                Összekötötte az egyes művészeti ágakat és az alkotói generációkat egy olyan, egyetemes értékrend mentén, melyben minden szereplő a saját szakterületén a változó körülmények mellett is ugyanazt a folytonosságot követi. Alapítványunk ennek a gyakorlatnak és szellemi örökségnek a folytatását kívánja felkarolni. Bár a művészeti ágak különbözőek, a szellem egy. A művészetek különböző kifejezési formák, harmóniába csak akkor kerülnek, ha az üzenetük azonos. Ahogy Szent Pál mondja: „A lelki adományok ugyan különfélék, a Lélek azonban ugyanaz.              </p>
-            </div>
-        </div> <!-- row -->
-      </div> <!-- container-fluid -->
+      <div class="row">
+        <div class="img-col col-12 col-lg-6 order-2 order-lg-1">
+          <img src="Képek/szucsendre/bandi2.png" alt="" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 order-1 order-lg-2">
+          <p data-i18n="szucs_text_2">
+            Összekötötte az egyes művészeti ágakat és az alkotói generációkat egy olyan, egyetemes értékrend mentén, melyben minden szereplő a saját szakterületén a változó körülmények mellett is ugyanazt a folytonosságot követi. Alapítványunk ennek a gyakorlatnak és szellemi örökségnek a folytatását kívánja felkarolni. Bár a művészeti ágak különbözőek, a szellem egy. A művészetek különböző kifejezési formák, harmóniába csak akkor kerülnek, ha az üzenetük azonos. Ahogy Szent Pál mondja: „A lelki adományok ugyan különfélék, a Lélek azonban ugyanaz.
+          </p>
+        </div>
+      </div> <!-- row -->
+       </article>
+  </main>
 
-
+    <script src="lang.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>

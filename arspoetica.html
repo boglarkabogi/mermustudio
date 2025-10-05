@@ -8,96 +8,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="navbar2.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="arspoetica.css">
-    <link rel="stylesheet" href="print.css" media="print">
 
   </head>
   <body>
-    <a href="#maincontent" class="skip-link">Tartalomra ugrás</a>
-    <header>
-      <nav class="navbar bg-body-tertiary ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><strong>MÉRMŰ STUDIO</strong></a>
-          <button class="menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <img src="Képek/black-menu.png" alt="">
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Kezdőlap</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="arspoetica.html">Ars Poetica</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Munkáink
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="balatonfured.html">Balatonfüred - lakóépület</a></li>
-                    <li><a class="dropdown-item" href="cs_schieszl.html">Csopak - szőlőhegyi présház</a></li>
-                    <li><a class="dropdown-item" href="cs_cseresnyes.html">Csopak - kúria</a></li>
-                    <li><a class="dropdown-item" href="dorgicse.html">Dörgicse - kúria</a></li>                    
-                    <li><a class="dropdown-item" href="knp.html">Kiskunsági Nemzeti Park - tanösvény</a></li>                    
-                    <li><a class="dropdown-item" href="kispiac.html">Kispest - Wekerle Piac</a></li>
-                    <li><a class="dropdown-item" href="bvtpl.html">Budapest - Belvárosi Templom</a></li>                    
-                  </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="dijak.html">Díjak</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="szucs.html">Szűcs Endre Alapítvány</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header id="navbar"></header>
+    <script>
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar").innerHTML = html;
+          document.querySelector(".navbar").classList.add("navbar-light");
+
+          initLanguage();
+        });
+    </script>
+
 
     <main id="maincontent" class="container-fluid">
       <article>
         <div class="r1 row">
           <div class="txt col-12 col-lg-6">
-            <h1><strong>Ars Poetica</strong></h1>
-              <p>
-                "Hálát adok a Jóistennek, hogy a föld ezen szép tájékára teremtett. Megajándékozott egy gyönyörű, gazdag nyelvvel, egy párját ritkító zenei kinccsel, de megajándékozott egy csodálatos formavilággal is, a nagyszentmiklósi, rakamazi leletek keleties burjánzásától a középkori templomaink bájos freskó-tüneményein, a Felvidék virágos reneszánsz sgrafittó díszein, Erdély erődtemplomainak mesevilágán át, a nagy szikla alatt megbúvó Torockó hófehér menyasszonyi ruhába öltöztetett díszletéig, a gyimesi patakfalvak boronafal-kerítés költeményéig, a dunántúli tornácok lomha, hullámzó dallamvilágáig, és a vakolatdíszek madárcsicsergéséig."
-              </p>
-
+            <h1><strong data-i18n="ars_title">Ars Poetica</strong></h1>
+            <p data-i18n="ars_text_1">
+              "Hálát adok a Jóistennek, hogy a föld ezen szép tájékára teremtett. Megajándékozott egy gyönyörű, gazdag nyelvvel, egy párját ritkító zenei kinccsel, de megajándékozott egy csodálatos formavilággal is, a nagyszentmiklósi, rakamazi leletek keleties burjánzásától a középkori templomaink bájos freskó-tüneményein, a Felvidék virágos reneszánsz sgrafittó díszein, Erdély erődtemplomainak mesevilágán át, a nagy szikla alatt megbúvó Torockó hófehér menyasszonyi ruhába öltöztetett díszletéig, a gyimesi patakfalvak boronafal-kerítés költeményéig, a dunántúli tornácok lomha, hullámzó dallamvilágáig, és a vakolatdíszek madárcsicsergéséig."
+            </p>
           </div>
           <div class="img-col col-12 col-lg-6">
-            
-                <img src="Képek/szucsendre/ap1.png" alt="Ars Poetica kép 1" class="img-fluid thumbnail">
-
+            <img src="Képek/szucsendre/ap1.png" alt="Ars Poetica kép 1" class="img-fluid thumbnail">
           </div>
         </div>
 
         <div class="row">
           <div class="img-col col-12 col-lg-6 order-2 order-lg-1">
-
-                <img src="Képek/szucsendre/ap3.png" alt="Ars Poetica kép 3" class="img-fluid">
-    
+            <img src="Képek/szucsendre/ap3.png" alt="Ars Poetica kép 3" class="img-fluid">
           </div>
           <div class="col-12 col-lg-6 order-1 order-lg-2">
-              <p>
-              "Elődeink, példaképeink, mint a zenében Bartók és Kodály, az építészetben Lechner Ödön, majd Kós Károly, Toroczkai Wigand Ede, Medgyaszay István és a többiek, mint Makovecz is, rájöttek, hogy csodálatos kincs birtokosai vagyunk. Ezt a kincset meg kell ismerni, meg kell menteni, és tovább kell adni. Ezt a nyelvet, melyen bennünket megszólítottak, magunkévá kell tennünk, ezen kell beszélnünk, dalolnunk, táncolnunk, szárnyalnunk, környezetet alakítanunk."              </p>
+            <p data-i18n="ars_text_2">
+              "Elődeink, példaképeink, mint a zenében Bartók és Kodály, az építészetben Lechner Ödön, majd Kós Károly, Toroczkai Wigand Ede, Medgyaszay István és a többiek, mint Makovecz is, rájöttek, hogy csodálatos kincs birtokosai vagyunk. Ezt a kincset meg kell ismerni, meg kell menteni, és tovább kell adni. Ezt a nyelvet, melyen bennünket megszólítottak, magunkévá kell tennünk, ezen kell beszélnünk, dalolnunk, táncolnunk, szárnyalnunk, környezetet alakítanunk, és hajlékot építenünk."              
+            </p>
             <aside>
-              <p id="endre">Szűcs Endre</p>
+              <p id="endre" data-i18n="ars_author">Szűcs Endre</p>
             </aside>
           </div>
         </div>
       </article>
     </main>
 
+    <script src="lang.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
