@@ -1,0 +1,18 @@
+# ==========================================
+# Cache érvénytelenítése CSS és JS fájlokra
+# ==========================================
+<FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=0, must-revalidate"
+</FilesMatch>
+
+# ==========================================
+# UTF-8 karakterkódolás biztosítása
+# ==========================================
+AddDefaultCharset UTF-8
+
+# ==========================================
+# Ha akarod, a képeket és HTML-t is érdemes cache-elni hosszabb ideig
+# ==========================================
+<FilesMatch "\.(html|htm|png|jpg|jpeg|gif|svg)$">
+    Header set Cache-Control "max-age=86400, public"
+</FilesMatch>
