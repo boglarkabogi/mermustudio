@@ -12,4 +12,4 @@ This website was created for Mermu studio. You can navigate through the pages me
 
 ### Development
 - Used languages: this is a static page that uses HTML + CSS + JavaScript
-- You can choose the language of the page: Englsh/Hungarian
+- You can choose the language of the page: English/Hungarian
